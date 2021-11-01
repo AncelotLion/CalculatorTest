@@ -12,12 +12,12 @@ public class Calculator {
     }
 
     public static int getInt(){
-        System.out.println("Введите число:");
+        System.out.println("Что вводим?");
         int num;
         if(scanner.hasNextInt()){
             num = scanner.nextInt();
         } else {
-            System.out.println("Вы допустили ошибку при вводе числа. Попробуйте еще раз.");
+            System.out.println("Нормально введи, пожалуйста");
             scanner.next();
             num = getInt();
         }
@@ -30,7 +30,7 @@ public class Calculator {
         if(scanner.hasNext()){
             operation = scanner.next().charAt(0);
         } else {
-            System.out.println("Вы допустили ошибку при вводе операции. Попробуйте еще раз.");
+            System.out.println("Нормально введи, пожалуйста");
             scanner.next();
             operation = getOperation();
         }
@@ -53,7 +53,7 @@ public class Calculator {
                 result = num1/num2;
                 break;
             default:
-                System.out.println("Операция не распознана. Повторите ввод.");
+                System.out.println("Ничего не понятно, вводи ещё раз");
                 result = calc(num1, num2, getOperation());
         }
         return result;
